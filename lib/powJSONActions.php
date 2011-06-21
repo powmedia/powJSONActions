@@ -69,13 +69,4 @@ class powJSONActions extends sfActions
             
         return sfView::SUCCESS;
     }
-
-    protected function returnXML($response) {
-
-      $this->xml = Doctrine_Parser_Xml::arrayToXml($response);
-      $this->setTemplate('xml');
-      $this->setLayout(false);
-      $this->getResponse()->setHttpHeader('Content-type', 'text/xml');
-      return sfView::SUCCESS;
-    }
 }
